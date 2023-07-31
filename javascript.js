@@ -19,7 +19,7 @@ function createBox(){
 
     const newDiv = document.createElement("div");
     newDiv.classList.add('box'); // Add the 'box' class to the new div
-    const newContent = document.createTextNode("box");
+    const newContent = document.createTextNode("   ");
     newDiv.appendChild(newContent);
     const container = document.querySelector('.container');
     container.appendChild(newDiv);
@@ -28,6 +28,6 @@ function createBox(){
 
 for(let i=0; i < 16; i++){
     createBox();
-    for(let j=0;j<16;j++)
+    for(let j=0;j<15;j++)
         createBox();
 }
