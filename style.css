@@ -1,41 +1,83 @@
 body{
-    background-color: black;
+    background-color: #1D1D1D;
+    color: white;
 }
 
+#reset{
+  display: flex;
+    background-color: black;
+    color:white;
+    border-radius: 10px;
+    border-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    padding: 20px;
+}
+
+#reset:hover{
+  background-color: white;
+  color: black;
+  border-color: black;
+  transition-duration: 0.3s;
+}
+
+.section{
+  padding-bottom: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input {
+  display: inline-flex;
+  padding: 20px;
+}
+
+#gridSizeInput {
+  padding: 12px;
+}
+
+input {
+  border-radius: 7px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  padding: 7px;
+  padding-left: 5px;
+}
+
+#applySizeButton {
+  padding: 7px;
+  border-radius: 7px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  
+}
+
+#applySizeButton:hover{
+  background-color: red;
+  color: white;
+  transition-duration: 0.3s;
+}
 
 .container {
     display: flex;
+    width: 660px;
     flex-wrap: wrap;
-    width: 55%;
-    background-color: black;
-    padding: 15px;
+    background-color: white;
   }
   
 .box {
     display: flex;
     background-color: white;
-    padding: 15px;
-    margin:1px;
     color: black;
-    width: 15px;
-    height: 15px;
-    text-align: center;
-    border-color: black;
+   border: 1px black;
     justify-content: center;
    
   }
 
   .info{
+    padding-bottom: 30px;
     display: flex;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
     justify-content: center;
   }
-
-  /*.box:hover{
-    background-color: black;
-    color: white;
-    transition-duration: 0.3s;
-  }*/
-  

@@ -1,43 +1,79 @@
-function createBox(){
+function createBox(boxSize){
 
-    //method to create a box and add it to the 16x16 grid
- 
+  const container = document.querySelector('.container');
 
     const newDiv = document.createElement("div");
     newDiv.classList.add('box'); // Add the 'box' class to the new div
+
+  //now set box sizes:
+  newDiv.style.width = `${boxSize}px`;
+  newDiv.style.height = `${boxSize}px`;
+
+
     const newContent = document.createTextNode("   ");
     newDiv.appendChild(newContent);
 
 
-      // Set up event listeners for drawing effect - when hover but also pressing pen down
-      newDiv.addEventListener("mousedown", () => {
-        isDrawing = true;
-    });
-
-    newDiv.addEventListener("mouseup", () => {
-        isDrawing = false;
-    });
-
-    newDiv.addEventListener("mousemove", () => {
-        if (isDrawing) {
+    newDiv.addEventListener("mouseover", () => {
             changeColor(newDiv);
-        }
+      
     });
 
-    const container = document.querySelector('.container');
     container.appendChild(newDiv);
 
 }
 
 function changeColor(element){ //function to change the background color of the boxes to black when hovered
-  element.style.backgroundColor = "black";
+  element.style.backgroundColor = "black"; //add color selection option?
+ 
+
+}
+
+function resetGrid() {
+  const container = document.querySelector('.container');
+  const boxes = document.querySelectorAll('.box');
+  boxes.forEach(box => {
+      box.style.backgroundColor = "white";
+  });
+}
+
+function createNewGrid(size, boxSize){
+  const container = document.querySelector('.container');
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+        createBox(boxSize);
+    }
+  }
+}
+
+function applySize(){
+  const gridSizeInput = document.getElementById('gridSizeInput');
+  const newSize = parseInt(gridSizeInput.value);
+
+  if (!isNaN(newSize) && newSize > 0) {
+    resetGrid();
+
+    const container = document.querySelector('.container');
+    container.innerHTML = ''; // Clear the existing grid
+
+    let boxSize = 660 / newSize; // Recalculate box size
+    createNewGrid(newSize, boxSize);
+ } 
+
+
+
 }
 
 
-for(let i=0; i < 16; i++){
-    createBox();
-    for(let j=0;j<15;j++)
-        createBox();
-}
+
+
+//event listener to reset button:
+const reset = document.getElementById('reset');
+reset.addEventListener('click', resetGrid);
+
+const applySizeButton = document.getElementById('applySizeButton');
+applySizeButton.addEventListener('click', applySize);
+
+
 
 
