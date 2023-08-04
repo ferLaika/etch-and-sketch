@@ -24,8 +24,7 @@ function createBox(boxSize){
 }
 
 function changeColor(element){ //function to change the background color of the boxes to black when hovered
-  element.style.backgroundColor = "black"; //add color selection option?
- 
+  element.style.backgroundColor = "black"; 
 
 }
 
@@ -56,7 +55,7 @@ function applySize(){
     const container = document.querySelector('.container');
     container.innerHTML = ''; // Clear the existing grid
 
-    let boxSize = 660 / newSize; // Recalculate box size
+    let boxSize = 560 / newSize; // Recalculate box size
     createNewGrid(newSize, boxSize);
  } 
 

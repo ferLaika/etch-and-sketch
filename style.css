@@ -4,26 +4,30 @@ body{
 }
 
 #reset{
-  display: flex;
     background-color: black;
     color:white;
     border-radius: 10px;
     border-color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
-    padding: 20px;
+    padding: 15px;
 }
 
 #reset:hover{
   background-color: white;
   color: black;
   border-color: black;
+  padding-right: 3%;
   transition-duration: 0.3s;
+  
 }
 
 .section{
-  padding-bottom: 40px;
+  display: flex;
+  padding-bottom: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: center;
+  margin: 10px;
 }
 
 .input {
@@ -54,14 +58,18 @@ input {
 #applySizeButton:hover{
   background-color: red;
   color: white;
+  padding-bottom: 5%;
   transition-duration: 0.3s;
+
 }
 
 .container {
     display: flex;
-    width: 660px;
+    width: 560px;
     flex-wrap: wrap;
-    background-color: white;
+    background-color: #1D1D1D;
+    padding-left: 400px;
+    
   }
   
 .box {
@@ -80,4 +88,20 @@ input {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
     justify-content: center;
+  }
+
+  .caption {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+  a:hover {
+    color: darkslategray;
+    transition-duration: 0.3s;
   }
